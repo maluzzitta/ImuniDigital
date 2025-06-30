@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dependentes - Carteira de Vacinação Digital</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ImuniDigital</div>
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="dependentes.html">Dependentes</a>
+            <a href="calendario.html">Calendário</a>
+        </nav>
+        <button id="theme-switcher" class="theme-switcher">Mudar Tema</button>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="form-container">
+                <h2>Cadastrar Novo Dependente</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="dep-name">Nome Completo do Dependente</label>
+                        <input type="text" id="dep-name" name="dep-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dep-birthdate">Data de Nascimento</label>
+                        <input type="date" id="dep-birthdate" name="dep-birthdate" required>
+                    </div>
+                    <button type="submit" class="btn">Adicionar Dependente</button>
+                </form>
+            </div>
+            
+            <div class="card" style="margin-top: 2rem; text-align: left;">
+                <h2>Meus Dependentes</h2>
+                <ul>
+                    <li><strong>Maria da Silva</strong> - Nascimento: 10/08/2024</li>
+                    <li><strong>João Oliveira</strong> - Nascimento: 05/03/2022</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>s

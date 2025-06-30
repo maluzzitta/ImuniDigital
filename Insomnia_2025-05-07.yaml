@@ -1,0 +1,199 @@
+type: collection.insomnia.rest/5.0
+name: Cadastro
+meta:
+  id: wrk_6c6d7eda221f4e6ea86ad415b0950ccb
+  created: 1746396164262
+  modified: 1746396164262
+collection:
+  - url: http://localhost:3000/pessoas
+    name: Cadastro
+    meta:
+      id: req_01aa5fbde7ed4e039d0ccad3d4766c58
+      created: 1746397077724
+      modified: 1746588594059
+      isPrivate: false
+      sortKey: -1746397077724
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Maria Luisa Moscardo",
+          "email": "malu.moscardo@gmail.com",
+          "senha": "123456"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/dependentes
+    name: Dependente
+    meta:
+      id: req_624cf74b9c4742898bcc63226db38a7a
+      created: 1746399697545
+      modified: 1746588622946
+      isPrivate: false
+      sortKey: -1746399697545
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome": "Bella Moscardo",
+          "data_nascimento": "2025-02-01",
+        	"usuario_id": "1746588596928"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/calendario
+    name: Calendário vizualização
+    meta:
+      id: req_04888e78e07c494db216621b9895d8a3
+      created: 1746416234325
+      modified: 1746416448710
+      isPrivate: false
+      sortKey: -1746416234325
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/vacinas
+    name: Registrar a vacina
+    meta:
+      id: req_ed6791f594ab4dddadadb98bc8c04b3b
+      created: 1746488071257
+      modified: 1746589074542
+      isPrivate: false
+      sortKey: -1746488071257
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "usuario_id": 1746588624743,
+          "nome_vacina": "Petavalente",
+          "data_aplicacao": "2025-04-10"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/vacinas/1746588624743
+    name: Consultar a vacina registrada
+    meta:
+      id: req_6ebd8e547dca45a7949f6762ba12a451
+      created: 1746490429950
+      modified: 1746589092198
+      isPrivate: false
+      sortKey: -1746490429950
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/vacinas/1746589076030
+    name: Atualizar vacina
+    meta:
+      id: req_50b18f87ac2d451eb40fefaaae9e7d01
+      created: 1746491402716
+      modified: 1746589118430
+      isPrivate: false
+      sortKey: -1746491402716
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "nome_vacina": "DTP (Tríplice Bacteriana)",
+          "data_aplicacao": "2025-06-01"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/vacinas/1746589076030
+    name: Deletar vacina
+    meta:
+      id: req_4cfd1f511f1645b4be56a19ee99b6d16
+      created: 1746589210409
+      modified: 1746640840608
+      isPrivate: false
+      sortKey: -1746589210409
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.0.2
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e3c4e6d09a7a0f2fdf334a85367bcf30a3fc0466
+    created: 1746396164272
+    modified: 1746396164272
+environments:
+  name: Base Environment
+  meta:
+    id: env_e3c4e6d09a7a0f2fdf334a85367bcf30a3fc0466
+    created: 1746396164267
+    modified: 1746396164267
+    isPrivate: false

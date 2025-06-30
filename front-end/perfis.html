@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Perfis - Imuni Digital</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="img/logo-imuni-digital.png" alt="Imuni Digital Logo"></a>
+        </div>
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="perfis.html">Perfis</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="conta.html">Minha Conta</a>
+        </nav>
+        <button id="theme-switcher" class="theme-switcher">Mudar Tema</button>
+    </header>
+
+    <div class="container">
+        <h2>Gerenciamento de Perfis</h2>
+
+        <!-- Perfil do Responsável -->
+        <div class="profile-card">
+            <h3>Seu Perfil (Responsável)</h3>
+            <p><strong>Nome:</strong> Usuário da Silva</p>
+            <h4>Vacinas Registradas:</h4>
+            <ul class="vaccine-log-list">
+                <li><span>Febre Amarela (Reforço)</span> <span>Data: 20/01/2023</span></li>
+                <li><span>dT (Difteria e Tétano)</span> <span>Data: 15/05/2021</span></li>
+            </ul>
+            <form style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                <label><strong>Adicionar vacina tomada:</strong></label>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                    <input type="text" placeholder="Nome da Vacina" style="flex: 2;">
+                    <input type="date" style="flex: 1;">
+                    <button type="submit" class="btn" style="width: auto; padding: 0.8rem;">Adicionar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Perfis dos Dependentes -->
+        <h3>Dependentes</h3>
+        <div class="profile-card">
+            <p><strong>Nome:</strong> Maria da Silva (Dependente)</p>
+            <p><strong>Nascimento:</strong> 10/08/2024</p>
+            <h4>Vacinas Registradas:</h4>
+            <ul class="vaccine-log-list">
+                <li><span>BCG</span> <span>Data: 10/08/2024</span></li>
+                <li><span>Hepatite B (1ª dose)</span> <span>Data: 10/08/2024</span></li>
+            </ul>
+        </div>
+
+        <!-- Cadastro de Novo Dependente -->
+        <div class="form-container">
+            <h3>Cadastrar Novo Dependente</h3>
+            <form>
+                <div class="form-group">
+                    <label for="dep-name">Nome Completo do Dependente</label>
+                    <input type="text" id="dep-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="dep-birthdate">Data de Nascimento</label>
+                    <input type="date" id="dep-birthdate" required>
+                </div>
+                <button type="submit" class="btn">Adicionar Dependente</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo ao Imuni Digital</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo-imuni-digital.png" alt="Imuni Digital Logo">
+        </div>
+        <button id="theme-switcher" class="theme-switcher">Mudar Tema</button>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-toggle-buttons">
+                <button id="show-login" class="toggle-btn active">Entrar</button>
+                <button id="show-register" class="toggle-btn">Cadastrar</button>
+            </div>
+
+            <!-- Formulário de Login -->
+            <form id="login-form" action="home.html" method="get">
+                <h2>Acesse sua Conta</h2>
+                <div class="form-group">
+                    <label for="login-email">E-mail</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+                <a href="esqueci-senha.html" class="text-link">Esqueci minha senha</a>
+            </form>
+
+            <!-- Formulário de Cadastro -->
+            <form id="register-form" action="home.html" method="get" style="display: none;">
+                <h2>Crie sua Conta</h2>
+                <div class="form-group">
+                    <label for="reg-name">Nome Completo</label>
+                    <input type="text" id="reg-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Senha</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="notifications" checked>
+                    <label for="notifications">Desejo receber notificações sobre as próximas vacinas.</label>
+                </div>
+                <button type="submit" class="btn">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

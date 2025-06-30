@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Imuni Digital</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="home.html"><img src="img/logo-imuni-digital.png" alt="Imuni Digital Logo"></a>
+        </div>
+        <nav>
+            <a href="home.html">Início</a>
+            <a href="perfis.html">Perfis</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="conta.html">Minha Conta</a>
+        </nav>
+        <button id="theme-switcher" class="theme-switcher">Mudar Tema</button>
+    </header>
+
+    <div class="container">
+        <div class="form-container">
+            <h2>Gerenciar Minha Conta</h2>
+            
+            <form>
+                <div class="form-group">
+                    <label for="current-name">Nome</label>
+                    <input type="text" id="current-name" value="Usuário da Silva">
+                </div>
+                <div class="form-group">
+                    <label for="current-email">E-mail</label>
+                    <input type="email" id="current-email" value="usuario@email.com">
+                </div>
+                <button type="submit" class="btn">Salvar Alterações</button>
+            </form>
+
+            <hr style="margin: 2rem 0; border-color: var(--border-color);">
+            
+            <h3>Alterar Senha</h3>
+            <form action="home.html">
+                <div class="form-group">
+                    <label for="current-password">Senha Atual</label>
+                    <input type="password" id="current-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password">Nova Senha</label>
+                    <input type="password" id="new-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirmar Nova Senha</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <button type="submit" class="btn">Alterar Senha</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
