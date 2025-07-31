@@ -29,36 +29,49 @@
             <h3>Seu Perfil (Responsável)</h3>
             <p><strong>Nome:</strong> Usuário da Silva</p>
             <h4>Vacinas Registradas:</h4>
-            <ul class="vaccine-log-list">
+            <ul class="vaccine-log-list" id="lista-vacinas-responsavel">
                 <li><span>Febre Amarela (Reforço)</span> <span>Data: 20/01/2023</span></li>
                 <li><span>dT (Difteria e Tétano)</span> <span>Data: 15/05/2021</span></li>
             </ul>
-            <form style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+            <form id="form-add-vacina-responsavel" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
                 <label><strong>Adicionar vacina tomada:</strong></label>
                 <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
-                    <input type="text" placeholder="Nome da Vacina" style="flex: 2;">
-                    <input type="date" style="flex: 1;">
+                    <input type="text" id="resp-vacina-nome" placeholder="Nome da Vacina" style="flex: 2;" required>
+                    <input type="date" id="resp-vacina-data" style="flex: 1;" required>
                     <button type="submit" class="btn" style="width: auto; padding: 0.8rem;">Adicionar</button>
                 </div>
             </form>
         </div>
 
-        <!-- Perfis dos Dependentes -->
+        <!-- Seção de Dependentes -->
         <h3>Dependentes</h3>
-        <div class="profile-card">
-            <p><strong>Nome:</strong> Maria da Silva (Dependente)</p>
-            <p><strong>Nascimento:</strong> 10/08/2024</p>
-            <h4>Vacinas Registradas:</h4>
-            <ul class="vaccine-log-list">
-                <li><span>BCG</span> <span>Data: 10/08/2024</span></li>
-                <li><span>Hepatite B (1ª dose)</span> <span>Data: 10/08/2024</span></li>
-            </ul>
+        <div id="lista-dependentes">
+            <!-- Perfil de exemplo -->
+            <div class="profile-card">
+                <p><strong>Nome:</strong> Maria da Silva (Dependente)</p>
+                <p><strong>Nascimento:</strong> 10/08/2024</p>
+                <p><strong>Parentesco:</strong> Filha</p>
+                <h4>Vacinas Registradas:</h4>
+                <ul class="vaccine-log-list">
+                    <li><span>BCG</span> <span>Data: 10/08/2024</span></li>
+                    <li><span>Hepatite B</span> <span>Data: 10/08/2024</span></li>
+                </ul>
+                <!-- Formulário adicionado aqui, usando classes para evitar conflitos -->
+                <form class="form-add-vacina-dependente" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <label><strong>Adicionar vacina tomada:</strong></label>
+                    <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                        <input type="text" class="dep-vacina-nome" placeholder="Nome da Vacina" style="flex: 2;" required>
+                        <input type="date" class="dep-vacina-data" style="flex: 1;" required>
+                        <button type="submit" class="btn" style="width: auto; padding: 0.8rem;">Adicionar</button>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <!-- Cadastro de Novo Dependente -->
         <div class="form-container">
             <h3>Cadastrar Novo Dependente</h3>
-            <form>
+            <form id="form-novo-dependente">
                 <div class="form-group">
                     <label for="dep-name">Nome Completo do Dependente</label>
                     <input type="text" id="dep-name" required>
@@ -67,10 +80,168 @@
                     <label for="dep-birthdate">Data de Nascimento</label>
                     <input type="date" id="dep-birthdate" required>
                 </div>
+                <div class="form-group">
+                    <label for="dep-parentesco">Grau de Parentesco</label>
+                    <select id="dep-parentesco" required>
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Filho(a)">Filho(a)</option>
+                        <option value="Neto(a)">Neto(a)</option>
+                        <option value="Sobrinho(a)">Sobrinho(a)</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group vaccine-checkboxes">
+                    <label>Selecione as vacinas já tomadas pelo dependente:</label>
+                    <ul id="dep-vaccine-list">
+                         <li><label><input type="checkbox" name="dep-vacinas" value="BCG"><strong>BCG</strong> — contra formas graves de tuberculose.</label></li>
+                        <li><label><input type="checkbox" name="dep-vacinas" value="Hepatite B"><strong>Hepatite B</strong> — protege contra o vírus da hepatite B.</label></li>
+                        <li><label><input type="checkbox" name="dep-vacinas" value="Pentavalente"><strong>Pentavalente</strong> — difteria, tétano, coqueluche, etc.</label></li>
+                        <li class="extra-vaccine" style="display: none;"><label><input type="checkbox" name="dep-vacinas" value="Poliomielite"><strong>Poliomielite</strong> — previne a paralisia infantil.</label></li>
+                        <li class="extra-vaccine" style="display: none;"><label><input type="checkbox" name="dep-vacinas" value="Tríplice Viral"><strong>Tríplice Viral</strong> — sarampo, caxumba e rubéola.</label></li>
+                        <li class="extra-vaccine" style="display: none;"><label><input type="checkbox" name="dep-vacinas" value="COVID-19"><strong>COVID-19</strong> — combate o coronavírus.</label></li>
+                        <li class="extra-vaccine" style="display: none;"><label><input type="checkbox" name="dep-vacinas" value="Febre Amarela"><strong>Febre Amarela</strong> — protege contra o vírus.</label></li>
+                        <li class="extra-vaccine" style="display: none;"><label><input type="checkbox" name="dep-vacinas" value="HPV"><strong>HPV</strong> — previne infecções pelo papilomavírus.</label></li>
+                    </ul>
+                    <button type="button" class="btn" id="show-more-dep-vaccines" style="margin-top: 1rem;">Mostrar mais vacinas</button>
+                </div>
                 <button type="submit" class="btn">Adicionar Dependente</button>
             </form>
         </div>
     </div>
-    <script src="js/script.js"></script>
+
+    <!-- SCRIPT INTERNO DA PÁGINA -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Lógica para Adicionar Vacina ao Responsável ---
+            const formAddVacinaResponsavel = document.getElementById('form-add-vacina-responsavel');
+            if (formAddVacinaResponsavel) {
+                formAddVacinaResponsavel.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const nomeVacina = document.getElementById('resp-vacina-nome').value.trim();
+                    const dataVacina = document.getElementById('resp-vacina-data').value;
+                    if (!nomeVacina || !dataVacina) {
+                        alert('Por favor, informe o nome e a data da vacina.');
+                        return;
+                    }
+                    const [ano, mes, dia] = dataVacina.split('-');
+                    const dataFormatada = `${dia}/${mes}/${ano}`;
+                    const novoItem = document.createElement('li');
+                    novoItem.innerHTML = `<span>${nomeVacina}</span> <span>Data: ${dataFormatada}</span>`;
+                    document.getElementById('lista-vacinas-responsavel').appendChild(novoItem);
+                    formAddVacinaResponsavel.reset();
+                });
+            }
+            
+            // --- LÓGICA PARA ADICIONAR VACINA A UM DEPENDENTE (usando delegação de eventos) ---
+            const listaDependentesContainer = document.getElementById('lista-dependentes');
+            if(listaDependentesContainer) {
+                // O ouvinte fica no container pai, não nos formulários individuais
+                listaDependentesContainer.addEventListener('submit', (event) => {
+                    // Verifica se o que foi enviado foi um formulArio de adicionar vacina de dependente
+                    if(event.target.matches('.form-add-vacina-dependente')) {
+                        event.preventDefault(); // Impede o recarregamento da página
+
+                        const form = event.target; // O formulário específico que foi enviado
+                        
+                        // encontra os elementos DENTRO do formulário que foi enviado
+                        const nomeVacinaInput = form.querySelector('.dep-vacina-nome');
+                        const dataVacinaInput = form.querySelector('.dep-vacina-data');
+                        
+                        const nomeVacina = nomeVacinaInput.value.trim();
+                        const dataVacina = dataVacinaInput.value;
+                        
+                        if (!nomeVacina || !dataVacina) {
+                            alert('Por favor, informe o nome e a data da vacina.');
+                            return;
+                        }
+
+                        // Encontra a lista de vacinas correta, subindo para o card pai
+                        const cardPai = form.closest('.profile-card');
+                        const listaDeVacinas = cardPai.querySelector('.vaccine-log-list');
+
+                        const [ano, mes, dia] = dataVacina.split('-');
+                        const dataFormatada = `${dia}/${mes}/${ano}`;
+                        
+                        const novoItem = document.createElement('li');
+                        novoItem.innerHTML = `<span>${nomeVacina}</span> <span>Data: ${dataFormatada}</span>`;
+
+                        listaDeVacinas.appendChild(novoItem); // Adiciona o item na lista correta
+                        form.reset(); // limpa apenas o formulário que foi enviado
+                    }
+                });
+            }
+
+
+            // --- Lógica para Adicionar Novo Dependente ---
+            const formNovoDependente = document.getElementById('form-novo-dependente');
+            if (formNovoDependente) {
+                formNovoDependente.addEventListener('submit', (event) => {
+                    event.preventDefault();
+                    const nome = document.getElementById('dep-name').value.trim();
+                    const dataNascimento = document.getElementById('dep-birthdate').value;
+                    const parentesco = document.getElementById('dep-parentesco').value;
+
+                    if (!nome || !dataNascimento || !parentesco) {
+                        alert('Por favor, preencha todos os campos, incluindo o grau de parentesco.');
+                        return;
+                    }
+
+                    const vacinasSelecionadas = document.querySelectorAll('input[name="dep-vacinas"]:checked');
+                    let listaVacinasHTML = '';
+                    const hoje = new Date().toLocaleDateString('pt-BR');
+
+                    vacinasSelecionadas.forEach(checkbox => {
+                        listaVacinasHTML += `<li><span>${checkbox.value}</span> <span>Data: ${hoje}</span></li>`;
+                    });
+
+                    const [ano, mes, dia] = dataNascimento.split('-');
+                    const dataFormatada = `${dia}/${mes}/${ano}`;
+
+                    const novoPerfilCard = document.createElement('div');
+                    novoPerfilCard.className = 'profile-card';
+
+                    // formulário com adição de vacina
+                    novoPerfilCard.innerHTML = `
+                        <p><strong>Nome:</strong> ${nome} (Dependente)</p>
+                        <p><strong>Nascimento:</strong> ${dataFormatada}</p>
+                        <p><strong>Parentesco:</strong> ${parentesco}</p>
+                        <h4>Vacinas Registradas:</h4>
+                        <ul class="vaccine-log-list">
+                            ${listaVacinasHTML}
+                        </ul>
+                        <form class="form-add-vacina-dependente" style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                            <label><strong>Adicionar vacina tomada:</strong></label>
+                            <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                                <input type="text" class="dep-vacina-nome" placeholder="Nome da Vacina" style="flex: 2;" required>
+                                <input type="date" class="dep-vacina-data" style="flex: 1;" required>
+                                <button type="submit" class="btn" style="width: auto; padding: 0.8rem;">Adicionar</button>
+                            </div>
+                        </form>
+                    `;
+                    document.getElementById('lista-dependentes').appendChild(novoPerfilCard);
+                    formNovoDependente.reset();
+                    document.querySelectorAll('.extra-vaccine').forEach(li => li.style.display = 'none');
+                    document.getElementById('show-more-dep-vaccines').style.display = 'block';
+                });
+            }
+
+            // --- Lógica para os botões restantes ---
+            const showMoreButton = document.getElementById('show-more-dep-vaccines');
+            if (showMoreButton) {
+                showMoreButton.addEventListener('click', () => {
+                    document.querySelectorAll('.extra-vaccine').forEach(li => li.style.display = 'block');
+                    showMoreButton.style.display = 'none';
+                });
+            }
+
+            const themeSwitcher = document.getElementById('theme-switcher');
+            if (themeSwitcher) {
+                themeSwitcher.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
