@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const NotificacaoModel = require('../models/NotificacaoModel');
-const MONGO_URI = 'mongodb+srv://malumoscardo:malumsc090625@cluster0.znoywdy.mongodb.net/ImuniDigital?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = 'mongodb+srv://malumoscardo:250609090625@cluster0.znoywdy.mongodb.net/ImuniDigital?retryWrites=true&w=majority&appName=Cluster0';
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB conectado!'))
