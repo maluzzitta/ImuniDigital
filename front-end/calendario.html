@@ -20,26 +20,268 @@
         </nav>
         <button id="theme-switcher" class="theme-switcher">Mudar Tema</button>
     </header>
-    <!-- O restante do conteúdo do calendário permanece o mesmo -->
+
     <div class="container">
         <main>
-            <h2>Calendário Nacional de Vacinação (Simplificado)</h2>
-            <p>Este é um resumo do calendário básico. Consulte sempre um profissional de saúde.</p>
-            
-            <div class="vaccine-schedule">
-                <h3 class="age-group">Ao Nascer</h3>
-                <table class="vaccine-table">
-                    <!-- ... conteúdo da tabela ... -->
-                </table>
-                
-                <h3 class="age-group">2 Meses</h3>
-                <table class="vaccine-table">
-                     <!-- ... conteúdo da tabela ... -->
-                </table>
+            <h2>Calendário Nacional de Vacinação 2025 (Simplificado)</h2>
+            <p>Este é um resumo do calendário básico. As recomendações podem mudar de acordo com a situação vacinal individual, condições de saúde ou em situações especiais como surtos. Consulte sempre um profissional de saúde para informações completas e personalizadas.</p>
 
-                <h3 class="age-group">12 Meses</h3>
+            <!-- Tabela para Gestantes -->
+            <div class="vaccine-schedule">
+                <h3 class="age-group">Gestantes</h3>
                 <table class="vaccine-table">
-                     <!-- ... conteúdo da tabela ... -->
+                    <thead>
+                        <tr>
+                            <th>Vacina</th>
+                            <th>Proteção Contra</th>
+                            <th>Esquema / Doses</th>
+                            <th>Idade / Grupo Populacional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hepatite B (recombinante)</td>
+                            <td>Hepatite B e suas complicações</td>
+                            <td>Iniciar ou completar o esquema de 3 doses</td>
+                            <td>Atualizar a situação vacinal desde a 1ª consulta pré-natal</td>
+                        </tr>
+                        <tr>
+                            <td>dTpa / dT</td>
+                            <td>Difteria, tétano e coqueluche</td>
+                            <td>1 dose de dTpa a cada gestação. Se o esquema básico estiver incompleto, completar com dT.</td>
+                            <td>A dose de dTpa deve ser aplicada a partir da 20ª semana de gestação</td>
+                        </tr>
+                        <tr>
+                            <td>Influenza (gripe)</td>
+                            <td>Gripe e suas complicações</td>
+                            <td>1 dose anual (com a vacina da temporada)</td>
+                            <td>Em qualquer fase gestacional</td>
+                        </tr>
+                        <tr>
+                            <td>Covid-19</td>
+                            <td>Formas graves de Covid-19</td>
+                            <td>1 dose de reforço a cada gestação</td>
+                            <td>Em qualquer fase gestacional, com intervalo de 6 meses da última dose</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela para Crianças -->
+            <div class="vaccine-schedule">
+                <h3 class="age-group">Crianças (0 a 9 anos)</h3>
+                <table class="vaccine-table">
+                     <thead>
+                        <tr>
+                            <th>Idade Recomendada</th>
+                            <th>Vacina</th>
+                            <th>Doses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ao nascer</td>
+                            <td>BCG e Hepatite B</td>
+                            <td>Dose única (BCG) e 1ª dose (Hepatite B)</td>
+                        </tr>
+                        <tr>
+                            <td>2 meses</td>
+                            <td>Penta, VIP (poliomielite), Pneumocócica 10V e Rotavírus</td>
+                            <td>1ª dose de cada</td>
+                        </tr>
+                        <tr>
+                            <td>3 meses</td>
+                            <td>Meningocócica C</td>
+                            <td>1ª dose</td>
+                        </tr>
+                        <tr>
+                            <td>4 meses</td>
+                            <td>Penta, VIP (poliomielite), Pneumocócica 10V e Rotavírus</td>
+                            <td>2ª dose de cada</td>
+                        </tr>
+                        <tr>
+                            <td>5 meses</td>
+                            <td>Meningocócica C</td>
+                            <td>2ª dose</td>
+                        </tr>
+                        <tr>
+                            <td>6 meses</td>
+                            <td>Penta e VIP (poliomielite)</td>
+                            <td>3ª dose de cada</td>
+                        </tr>
+                         <tr>
+                            <td>A partir de 6 meses</td>
+                            <td>Influenza e Covid-19</td>
+                            <td>Esquema inicial e reforços anuais, conforme orientação</td>
+                        </tr>
+                        <tr>
+                            <td>9 meses</td>
+                            <td>Febre Amarela</td>
+                            <td>1ª dose</td>
+                        </tr>
+                        <tr>
+                            <td>12 meses</td>
+                            <td>Tríplice Viral (SCR) e reforços da Pneumocócica e Meningocócica</td>
+                            <td>1ª dose (SCR) e 1º reforço das outras</td>
+                        </tr>
+                        <tr>
+                            <td>15 meses</td>
+                            <td>DTP, VOP (oral), Hepatite A e Tetraviral (SCRV)</td>
+                            <td>1º reforço (DTP), reforço (VOP) e 1ª dose das outras</td>
+                        </tr>
+                        <tr>
+                            <td>4 anos</td>
+                            <td>DTP, VOP (oral) e Varicela</td>
+                            <td>2º reforço (DTP e VOP) e 2ª dose (Varicela)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela para Adolescentes e Jovens -->
+            <div class="vaccine-schedule">
+                <h3 class="age-group">Adolescentes e Jovens (10 a 24 anos)</h3>
+                <table class="vaccine-table">
+                    <thead>
+                        <tr>
+                            <th>Vacina</th>
+                            <th>Proteção Contra</th>
+                            <th>Esquema / Doses</th>
+                            <th>Idade / Grupo Populacional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>HPV4</td>
+                            <td>Infecções por Papilomavírus Humano</td>
+                            <td>1 ou 2 doses, dependendo da idade e histórico</td>
+                            <td>9 a 14 anos. Outros grupos prioritários podem ter recomendação.</td>
+                        </tr>
+                        <tr>
+                            <td>Meningocócica ACWY</td>
+                            <td>Meningites e infecções generalizadas</td>
+                            <td>1 dose de reforço</td>
+                            <td>11 a 14 anos</td>
+                        </tr>
+                        <tr>
+                            <td>dT (Dupla adulto)</td>
+                            <td>Difteria e tétano</td>
+                            <td>Reforço a cada 10 anos</td>
+                            <td>Toda a população nesta faixa etária</td>
+                        </tr>
+                        <tr>
+                            <td>Hepatite B</td>
+                            <td>Hepatite B</td>
+                            <td>Completar esquema de 3 doses, se não vacinado</td>
+                            <td>Toda a população nesta faixa etária</td>
+                        </tr>
+                        <tr>
+                            <td>Febre Amarela</td>
+                            <td>Febre Amarela</td>
+                            <td>1 dose, se nunca vacinado</td>
+                            <td>Recomendada para áreas de risco</td>
+                        </tr>
+                        <tr>
+                            <td>Tríplice Viral (SCR)</td>
+                            <td>Sarampo, caxumba e rubéola</td>
+                            <td>Completar esquema de 2 doses</td>
+                            <td>Toda a população até 29 anos</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela para Adultos -->
+            <div class="vaccine-schedule">
+                <h3 class="age-group">Adultos (25 a 59 anos)</h3>
+                <table class="vaccine-table">
+                     <thead>
+                        <tr>
+                            <th>Vacina</th>
+                            <th>Proteção Contra</th>
+                            <th>Esquema / Doses</th>
+                            <th>Idade / Grupo Populacional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hepatite B</td>
+                            <td>Hepatite B</td>
+                            <td>Completar esquema de 3 doses, se não vacinado</td>
+                            <td>Toda a população nesta faixa etária</td>
+                        </tr>
+                        <tr>
+                            <td>dT (Dupla adulto)</td>
+                            <td>Difteria e tétano</td>
+                            <td>Reforço a cada 10 anos. Pode ser antecipado para 5 anos.</td>
+                            <td>Toda a população nesta faixa etária</td>
+                        </tr>
+                        <tr>
+                            <td>Tríplice Viral (SCR)</td>
+                            <td>Sarampo, caxumba e rubéola</td>
+                            <td>1 dose para quem tem de 30 a 59 anos, se nunca vacinado.</td>
+                             <td>População de 30 a 59 anos sem comprovação vacinal.</td>
+                        </tr>
+                        <tr>
+                            <td>Febre Amarela</td>
+                            <td>Febre Amarela</td>
+                            <td>1 dose, se nunca vacinado</td>
+                             <td>Recomendada para áreas de risco.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tabela para Idosos -->
+            <div class="vaccine-schedule">
+                <h3 class="age-group">Idosos (a partir de 60 anos)</h3>
+                <table class="vaccine-table">
+                    <thead>
+                        <tr>
+                            <th>Vacina</th>
+                            <th>Proteção Contra</th>
+                            <th>Esquema / Doses</th>
+                            <th>Idade / Grupo Populacional</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                           <td>Influenza (gripe)</td>
+                           <td>Gripe e suas complicações</td>
+                           <td>1 dose anual</td>
+                           <td>Toda a população a partir de 60 anos</td>
+                        </tr>
+                        <tr>
+                            <td>dT (Dupla adulto)</td>
+                            <td>Difteria e tétano</td>
+                            <td>Reforço a cada 10 anos.</td>
+                            <td>Toda a população a partir de 60 anos</td>
+                        </tr>
+                        <tr>
+                            <td>Covid-19</td>
+                            <td>Formas graves de Covid-19</td>
+                            <td>1 dose semestral (a cada 6 meses)</td>
+                             <td>Toda a população a partir de 60 anos</td>
+                        </tr>
+                         <tr>
+                            <td>Pneumocócica 23 (VPP23)</td>
+                            <td>Doenças pneumocócicas</td>
+                            <td>1 dose de reforço, 5 anos após a dose inicial.</td>
+                             <td>População indígena, acamados e/ou institucionalizados.</td>
+                        </tr>
+                        <tr>
+                            <td>Hepatite B</td>
+                            <td>Hepatite B</td>
+                            <td>Completar esquema de 3 doses, se houver risco.</td>
+                            <td>Avaliar a necessidade individualmente.</td>
+                        </tr>
+                        <tr>
+                            <td>Febre Amarela</td>
+                            <td>Febre Amarela</td>
+                            <td>Dose única, mediante avaliação médica.</td>
+                            <td>Apenas para áreas de risco, após avaliação médica.</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </main>
