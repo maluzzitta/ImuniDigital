@@ -22,7 +22,7 @@
                 <button id="show-register" class="toggle-btn">Cadastrar</button>
             </div>
 
-            <!-- Formulário de Login -->
+            <!-- formulário de Login -->
             <form id="login-form" action="home.html" method="get">
                 <h2>Acesse sua Conta</h2>
                 <div class="form-group">
@@ -40,26 +40,112 @@
             <!-- Formulário de Cadastro -->
             <form id="register-form" action="home.html" method="get" style="display: none;">
                 <h2>Crie sua Conta</h2>
+            
                 <div class="form-group">
                     <label for="reg-name">Nome Completo</label>
-                    <input type="text" id="reg-name" required>
+                    <input type="text" id="reg-name" name="nome" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="reg-birthdate">Data de Nascimento</label>
+                    <input type="date" id="reg-birthdate" name="data_nascimento" required>
+                </div>
+            
                 <div class="form-group">
                     <label for="reg-email">E-mail</label>
-                    <input type="email" id="reg-email" required>
+                    <input type="email" id="reg-email" name="email" required>
                 </div>
+            
                 <div class="form-group">
                     <label for="reg-password">Senha</label>
-                    <input type="password" id="reg-password" required>
+                    <input type="password" id="reg-password" name="senha" required>
                 </div>
+            
                 <div class="form-group checkbox-group">
-                    <input type="checkbox" id="notifications" checked>
+                    <input type="checkbox" id="notifications" name="notificacoes" checked>
                     <label for="notifications">Desejo receber notificações sobre as próximas vacinas.</label>
                 </div>
+            
+                <div class="form-group vaccine-checkboxes">
+                    <label>Vacinas já tomadas:</label>
+                    <ul id="vaccine-list">
+                        <li data-step="1">
+                            <label><input type="checkbox" name="vacinas" value="BCG">
+                            <strong>BCG</strong> — contra formas graves de tuberculose.</label>
+                        </li>
+                        <li data-step="1">
+                            <label><input type="checkbox" name="vacinas" value="Hepatite B">
+                            <strong>Hepatite B</strong> — protege contra o vírus da hepatite B.</label>
+                        </li>
+                        <li data-step="1">
+                            <label><input type="checkbox" name="vacinas" value="Pentavalente">
+                            <strong>Pentavalente</strong> — combina 5 vacinas, incluindo contra difteria, tétano e coqueluche.</label>
+                        </li>
+                
+                        <li data-step="2" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="Poliomielite">
+                            <strong>Poliomielite</strong> — previne a paralisia infantil.</label>
+                        </li>
+                        <li data-step="2" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="Tríplice Viral">
+                            <strong>Tríplice Viral</strong> — protege contra sarampo, caxumba e rubéola.</label>
+                        </li>
+                        <li data-step="2" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="COVID-19">
+                            <strong>COVID-19</strong> — combate o coronavírus causador da pandemia.</label>
+                        </li>
+                
+                        <li data-step="3" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="Febre Amarela">
+                            <strong>Febre Amarela</strong> — protege contra o vírus transmitido por mosquitos.</label>
+                        </li>
+                        <li data-step="3" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="HPV">
+                            <strong>HPV</strong> — previne infecções pelo papilomavírus humano e certos tipos de câncer.</label>
+                        </li>
+                        <li data-step="3" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="Meningocócica C">
+                            <strong>Meningocócica C</strong> — protege contra a meningite tipo C.</label>
+                        </li>
+                
+                        <li data-step="4" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="Influenza">
+                            <strong>Influenza (Gripe)</strong> — reduz os riscos de gripe grave.</label>
+                        </li>
+                        <li data-step="4" style="display: none;">
+                            <label><input type="checkbox" name="vacinas" value="DTP">
+                            <strong>DTP</strong> — reforço contra difteria, tétano e coqueluche.</label>
+                        </li>
+                    </ul>
+                
+                    <button type="button" class="btn" id="show-more-vaccines" style="margin-top: 1rem;">Mostrar mais vacinas</button>
+                </div>
+            
                 <button type="submit" class="btn">Cadastrar</button>
             </form>
+            
+            
         </div>
     </div>
+    <script>
+        let currentStep = 1;
+    
+        document.getElementById('show-more-vaccines').addEventListener('click', function () {
+            currentStep++;
+            const itemsToShow = document.querySelectorAll(`#vaccine-list li[data-step="${currentStep}"]`);
+            
+            itemsToShow.forEach(item => {
+                item.style.display = 'flex';
+            });
+    
+            // Oculta o botão se não houver mais etapas
+            const nextStepItems = document.querySelectorAll(`#vaccine-list li[data-step="${currentStep + 1}"]`);
+            if (nextStepItems.length === 0) {
+                this.style.display = 'none';
+            }
+        });
+    </script>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
